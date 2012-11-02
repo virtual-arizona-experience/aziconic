@@ -14,7 +14,7 @@ function init(){
 	var cloudmade = new L.TileLayer(cmUrl, cmOptions);//, {styleId: 999});
 	
 	/* WMS layer */
-	var wmsUrl = "http://opengis.azexperience.org/geoserver/wms";
+	var wmsUrl = "/geoserver/wms";
 		wmsLayer = new L.TileLayer.WMS(wmsUrl, {
 			maxZoom: 10, 
 			layers: "vae:aziconic", 
@@ -23,7 +23,7 @@ function init(){
 		}); 
 	
 	/* WFS GeoJSON layer */
-	var wfsLayer = new L.GeoJSON.WFS("http://opengis.azexperience.org/geoserver/wfs", "vae:aziconic", {
+	var wfsLayer = new L.GeoJSON.WFS("/geoserver/wfs", "vae:aziconic", {
 		pointToLayer: function(latlng) { 
 			return new L.Marker(latlng, { 
 				icon: new L.Icon({ 
